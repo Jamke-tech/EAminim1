@@ -1,0 +1,53 @@
+<div class="row justify-content-center" *ngIf= "pacient as pacient">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3" style="margin-top: 30px;">Dades del nou Pacient</h4>
+      <form class="needs-validation" novalidate [formGroup]="registro" > <!--(ngSubmit)="añadirUsuario()-->
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Nom</label>
+            <input #name type="text" class="form-control" id="name" placeholder="{{this.pacient?.name}}" value="" required>
+            
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Cognom</label>
+            <input #surname type="text" class="form-control" id="surname" placeholder="" value="{{this.pacient?.surname}}" required>
+            
+          </div>
+             
+          
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="birthDay">Data de naixement</label>
+                
+              <input #birthDate type="date" class="form-control" id="birthDate"  value = "{{this.pacient?.birthDate | date}}" placeholder="{{this.usuario?.birthDate | date}}" required>
+                
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="birthDay">Data de Vacunació</label>
+               
+                <input #vaccineDate type="date" class="form-control" id="vaccineDate" value = "{{this.pacient?.vaccineDate | date}}" placeholder="{{this.usuario?.vaccineDate | date}}" required>
+                
+              
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Nom de la Vacuna aplicada</label>
+            <input #vaccine type="text" class="form-control" id="vaccine" placeholder="" value="{{this.pacient?.vaccineApplied}}" required>
+            
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Professió</label>
+            <input #profession type="text" class="form-control" id="profession" placeholder="" value="{{this.pacient?.profession}}" required>
+            
+          </div>
+        </div>
+        <div>
+          <button  class="btn-desa" (click)="updatePacient(name.value,surname.value,birthDate.value,vaccineDate.value,vaccine.value,profession.value)">Modificar Dades de Pacient</button> 
+      </div>
+      </form>
+    </div>
+  </div>
