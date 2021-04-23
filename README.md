@@ -15,7 +15,7 @@ cd backend
 S'activarà en el localhost:4200 
 
 ```bash
-cd frontend/Angular/Minim1EA
+cd frontend
 
 ng serve
 
